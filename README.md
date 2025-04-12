@@ -1,69 +1,96 @@
-# Welcome to your Lovable project
+# Patient History Visualizer
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/23e559c0-513e-462c-af5d-b9fc95aa63ce
+Patient History Visualizer is a modern web application designed to help healthcare professionals view and analyze patient medical records efficiently. The application provides a clean, intuitive interface for visualizing patient data, medical conditions, and clinical notes.
 
-## How can I edit this code?
+![Patient History Visualizer](https://example.com/screenshot.png) <!-- Replace with actual screenshot when available -->
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Patient Overview Dashboard**: View patient demographics, smoking history, family history, and follow-up information at a glance
+- **Medical History Table**: Interactive table for viewing medical conditions with:
+  - Filtering by assertion status (positive, negative, unspecified)
+  - Text search across conditions and SNOMED codes
+  - Sortable columns for better organization
+  - Color-coded rows based on assertion status
+- **Clinical Notes Section**: Review clinical summaries and detailed notes
+- **SNOMED CT Integration**: Display of standardized medical terminology codes
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/23e559c0-513e-462c-af5d-b9fc95aa63ce) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React**: UI component library
+- **TypeScript**: Type-safe JavaScript
+- **Vite**: Fast development environment
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: High-quality UI components
+- **React Router**: Client-side routing
+- **React Query**: Data fetching and state management
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (version 14 or higher)
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/patient-history-visualizer.git
+cd patient-history-visualizer
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
+# or
+yarn install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+# or
+yarn dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
 
-**Use GitHub Codespaces**
+The application displays a sample patient record on launch. In a production environment, you would integrate with your healthcare system's API to fetch real patient data.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Sample Data Structure
 
-## What technologies are used for this project?
+The application expects medical conditions in the following format:
 
-This project is built with these:
+```typescript
+interface MedicalCondition {
+  name: string;          // Common name of the condition
+  full_name: string;     // Full medical name
+  assertion: string | null; // 'positive', 'negative', or null (unspecified)
+  date: string;          // Date of diagnosis/mention
+  patient: number;       // Patient identifier
+  snomed_id: string;     // SNOMED CT code
+}
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Customization
 
-## How can I deploy this project?
+The application uses a custom medical color theme that can be adjusted in the Tailwind configuration:
 
-Simply open [Lovable](https://lovable.dev/projects/23e559c0-513e-462c-af5d-b9fc95aa63ce) and click on Share -> Publish.
+- `text-medical-text`: Primary text color
+- `text-medical-muted`: Secondary text color
+- `text-medical-critical`: Warning indicators (e.g., positive conditions)
+- `text-medical-highlight`: Emphasis color
 
-## I want to use a custom domain - is that possible?
+## Contributing
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- SNOMED International for medical terminology standards
+- All contributors to the open-source libraries used in this project
