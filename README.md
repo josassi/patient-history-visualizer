@@ -4,7 +4,7 @@
 
 Patient History Visualizer is a modern web application designed to help healthcare professionals view and analyze patient medical records efficiently. The application provides a clean, intuitive interface for visualizing patient data, medical conditions, and clinical notes.
 
-![Patient History Visualizer](/images/screenshot.png)
+![Patient History Visualizer](public/images/screenshot.png)
 
 ## Features
 
